@@ -7,6 +7,7 @@
 
 angular.module('c4mApp')
   .controller('ActivityCtrl', function ($scope, DrupalSettings, EntityResource, $timeout, $interval, $sce) {
+      console.log($scope);
 
     /*
      * Init the Bootstrap tooltips.

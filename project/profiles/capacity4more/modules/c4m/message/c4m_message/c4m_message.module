@@ -3803,6 +3803,42 @@ function c4m_message_load_homepage_activity_stream() {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function c4m_message_menu() {
+  $items['ajax/remote'] = array(
+    'title' => 'Data',
+    'page callback' => 'c4m_activity_ajax',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Ajax callback.
+ *
+ * Load activities.
+ */
+function c4m_activity_ajax() {
+
+  $commands = array();
+
+  $selector = '#activity-wrapper';
+// Add the activities to settings.
+  c4m_message_load_homepage_activity_stream();
+  // Add the Angular app.
+  $path = drupal_get_path('module', 'c4m_restful_quick_post') . '/components/c4m-app/dist/c4m-app.js';
+  drupal_add_js($path);
+
+  $html = theme('c4m_message_activity_stream');
+
+  $commands[] = ajax_command_html($selector, $html);
+
+  print ajax_render($commands);
+  drupal_exit();
+}
+/**
  * Implements hook_query_TAG_alter().
  *
  * Changes the join of the group field to "LEFT" join,
