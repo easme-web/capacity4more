@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "02fbb409f586fc679c4fd973d5bab008",
+    "content-hash": "d2816037b41f600f96c61ae535ff77fc",
     "packages": [
         {
             "name": "behat/behat",
@@ -351,16 +351,16 @@
         },
         {
             "name": "behat/mink-selenium2-driver",
-            "version": "v1.3.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/MinkSelenium2Driver.git",
-                "reference": "473a9f3ebe0c134ee1e623ce8a9c852832020288"
+                "reference": "46404b04c761feff4feab4d8d75957225e21a73c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/473a9f3ebe0c134ee1e623ce8a9c852832020288",
-                "reference": "473a9f3ebe0c134ee1e623ce8a9c852832020288",
+                "url": "https://api.github.com/repos/minkphp/MinkSelenium2Driver/zipball/46404b04c761feff4feab4d8d75957225e21a73c",
+                "reference": "46404b04c761feff4feab4d8d75957225e21a73c",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +369,7 @@
                 "php": ">=5.3.1"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
+                "mink/driver-testsuite": "dev-master"
             },
             "type": "mink-driver",
             "extra": {
@@ -408,7 +408,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2016-03-05T09:10:18+00:00"
+            "time": "2017-07-10T06:23:49+00:00"
         },
         {
             "name": "drupal/drupal-extension",
@@ -1616,7 +1616,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "behat/behat": 0,
-        "behat/mink": 0
+        "behat/mink": 0,
+        "behat/mink-selenium2-driver": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

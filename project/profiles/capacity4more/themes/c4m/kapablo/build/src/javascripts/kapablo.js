@@ -588,7 +588,7 @@ var jQuery = jQuery || {};
 
       var emptyTextfields = false;
       var emptyWidgetfields = false;
-//       var emptyImageWidget = false;
+      var emptyImageWidget = false;
       var emptyTopicWidget = false;
 
       emptyTextfields = Drupal.behaviors.disableSubmitUntilAllRequired.checkTextFields(requiredTextFields);
@@ -597,11 +597,11 @@ var jQuery = jQuery || {};
       }
 
       // Banner element.
-//       if ($("#edit-image-banner .form-required").length) {
-//         if ($("#edit-image-banner input.fid").val() === '0') {
-//           emptyImageWidget = true;
-//         }
-//       }
+      if ($("#edit-image-banner .form-required").length) {
+        if ($("#edit-image-banner input.fid").val() === '0') {
+          emptyImageWidget = true;
+        }
+      }
       // Topics widget.
       if ($(".c4m_vocab_topic .form-required").length > 0) {
         var selectedTopics = $(".c4m_vocab_topic .selected-values .taxonomy-term-selected:not(.ng-hide)");
@@ -614,7 +614,7 @@ var jQuery = jQuery || {};
           Drupal.behaviors.disableSubmitUntilAllRequired.updateSubmitButtons(
             emptyTextfields,
             emptyWidgetfields,
-//             emptyImageWidget,
+            emptyImageWidget,
             emptyTopicWidget,
             submitButtons
           );
@@ -626,7 +626,7 @@ var jQuery = jQuery || {};
         Drupal.behaviors.disableSubmitUntilAllRequired.updateSubmitButtons(
           emptyTextfields,
           emptyWidgetfields,
-//           emptyImageWidget,
+          emptyImageWidget,
           emptyTopicWidget,
           submitButtons
         );
@@ -644,7 +644,25 @@ var jQuery = jQuery || {};
         Drupal.behaviors.disableSubmitUntilAllRequired.updateSubmitButtons(
           emptyTextfields,
           emptyWidgetfields,
-//           emptyImageWidget,
+          emptyImageWidget,
+          emptyTopicWidget,
+          submitButtons
+        );
+      });
+
+      requiredWidgets.change(function () {
+        emptyWidgetfields = false;
+
+        requiredWidgets.each(function () {
+          if ($(this).val() === '') {
+            emptyWidgetfields = true;
+          }
+        });
+
+        Drupal.behaviors.disableSubmitUntilAllRequired.updateSubmitButtons(
+          emptyTextfields,
+          emptyWidgetfields,
+          emptyImageWidget,
           emptyTopicWidget,
           submitButtons
         );
@@ -654,7 +672,7 @@ var jQuery = jQuery || {};
       Drupal.behaviors.disableSubmitUntilAllRequired.updateSubmitButtons(
         emptyTextfields,
         emptyWidgetfields,
-//         emptyImageWidget,
+        emptyImageWidget,
         emptyTopicWidget,
         submitButtons
       );
