@@ -66,6 +66,10 @@ fieldset {
             }
         }
     }
+
+    &.filter-wrapper {
+        margin-top: 1em;
+    }
 }
 
 
@@ -207,4 +211,15 @@ fieldset {
             @include css-var("color", "ec-grey-100");
         }
     }
+}
+
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+
+.text-summary-wrapper,
+.field-name-c4m-location-address .panel-body > *, .field-name-c4m-location-address .panel-body > .form-group, .field-name-c4m-location-address .panel-body > * > .form-group {
+    margin-bottom: 1em;
 }
