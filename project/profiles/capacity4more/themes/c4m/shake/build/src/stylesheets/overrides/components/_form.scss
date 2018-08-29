@@ -128,9 +128,6 @@ fieldset {
     color: inherit;
 }
 
-
-
-
 #c4m-search-form .form-submit,
 #c4m-search-redirect-form .form-submit,
 #c4m-search-redirect-form--2 .form-submit {
@@ -157,6 +154,12 @@ fieldset {
 #c4m-search-redirect-form--2 .form-submit:focus {
     @include css-var("background-color", "ec-blue-100", "", "!important");
     color: #fff !important;
+}
+
+#c4m-features-og-manage-categories-overview-form {
+    > div > * {
+        margin-bottom: 2em;
+    }
 }
 
 #quick-post-form {
